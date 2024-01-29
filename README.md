@@ -15,7 +15,6 @@ Este proyecto ha sido realizado en una zona de desarrollo:
 
 - Backend: donde he trabajado con Laravel.
 
-Enlace a la aplicación: [http://51.83.77.47:8000/](http://51.83.77.47:8000/)
 
 ## Iniciar el proyecto
 
