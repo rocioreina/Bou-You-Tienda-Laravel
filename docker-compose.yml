@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+  tienda-ropa:
+    build:
+      args:
+        user: rocio
+        uid: 1001
+      context: ./
+      dockerfile: Dockerfile
+    image: tienda-ropa
+    container_name: tienda-ropa-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - global
+  nginx:
+    image: nginx:alpine
+    container_name: tienda-ropa-nginx
+    restart: unless-stopped
+    ports:
+      - 8000:80
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/nginx:/etc/nginx/conf.d/
+    networks:
+      - global
+
+networks:
+  global:
+    driver: bridge
